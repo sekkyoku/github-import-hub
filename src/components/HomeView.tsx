@@ -17,14 +17,16 @@ const SUGGESTED_PROMPTS = [
 
 const HomeView = ({ onStartChat }: HomeViewProps) => {
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-80px)] px-4 animate-fade-in">
+    <div className="flex items-center justify-center min-h-[calc(100vh-80px)] px-4 animate-fade-in bg-background">
       <div className="max-w-2xl w-full mx-auto mt-16">
         {/* Logo and Title */}
         <div className="flex flex-col items-center text-center mb-12">
-          <img src={streamvisionLogo} alt="StreamVision Media" className="h-16 object-contain mb-6" />
+          <div className="mb-6 p-4 rounded-2xl bg-card/50 backdrop-blur-sm">
+            <img src={streamvisionLogo} alt="StreamVision Media" className="h-16 object-contain" />
+          </div>
           <div className="flex items-center gap-2 mb-4">
             <Sparkles className="h-8 w-8 text-streamvision-coral" />
-            <h1 className="text-5xl font-bold text-streamvision-navy">Visionary</h1>
+            <h1 className="text-5xl font-bold text-foreground">Visionary</h1>
           </div>
           <p className="text-lg text-muted-foreground max-w-md">
             Ask about files, sheets, CPMs, contacts — en inglés o en español.
@@ -37,7 +39,7 @@ const HomeView = ({ onStartChat }: HomeViewProps) => {
             <button
               key={index}
               onClick={() => onStartChat(prompt)}
-              className="px-5 py-2.5 rounded-full border-2 border-streamvision-coral text-streamvision-coral font-medium hover:bg-streamvision-coral hover:text-white transition-all duration-200 transform hover:scale-105"
+              className="px-5 py-2.5 rounded-full border-2 border-streamvision-coral text-streamvision-coral font-medium hover:bg-streamvision-coral hover:text-foreground transition-all duration-200 transform hover:scale-105"
             >
               {prompt}
             </button>
@@ -49,7 +51,7 @@ const HomeView = ({ onStartChat }: HomeViewProps) => {
           <Button
             onClick={() => onStartChat()}
             size="lg"
-            className="bg-streamvision-coral hover:bg-streamvision-coral/90 text-white px-12 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+            className="bg-streamvision-coral hover:bg-streamvision-coral/90 text-foreground px-12 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
           >
             Start a Chat
           </Button>
