@@ -10,24 +10,24 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 215 28% 8%;
-    --foreground: 0 0% 95%;
-    --card: 215 25% 12%;
-    --card-foreground: 0 0% 95%;
-    --popover: 215 28% 10%;
-    --popover-foreground: 0 0% 95%;
+    --background: 210 28% 12%;
+    --foreground: 0 0% 98%;
+    --card: 210 25% 15%;
+    --card-foreground: 0 0% 98%;
+    --popover: 210 28% 14%;
+    --popover-foreground: 0 0% 98%;
     --primary: 210 50% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 215 20% 18%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 215 20% 16%;
-    --muted-foreground: 210 15% 65%;
+    --secondary: 210 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 20% 18%;
+    --muted-foreground: 210 15% 70%;
     --accent: 6 78% 57%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 215 20% 22%;
-    --input: 215 20% 22%;
+    --border: 210 20% 25%;
+    --input: 210 20% 25%;
     --ring: 6 78% 57%;
     --radius: 0.75rem;
     --chart-1: 6 78% 57%;
@@ -37,10 +37,10 @@ All colors MUST be HSL.
     --chart-5: 27 87% 67%;
 
     /* Custom StreamVision colors */
-    --streamvision-navy: 210 50% 45%;
+    --streamvision-navy: 210 28% 12%;
     --streamvision-coral: 6 78% 57%;
     --streamvision-light: 210 30% 20%;
-    --streamvision-text: 0 0% 95%;
+    --streamvision-text: 0 0% 98%;
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--streamvision-navy)), hsl(var(--streamvision-coral)));
@@ -53,13 +53,13 @@ All colors MUST be HSL.
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 215 25% 10%;
-    --sidebar-foreground: 0 0% 90%;
+    --sidebar-background: 210 25% 14%;
+    --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 210 50% 45%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 215 20% 18%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 215 20% 22%;
+    --sidebar-accent: 210 20% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 210 20% 25%;
     --sidebar-ring: 6 78% 57%;
   }
 }
