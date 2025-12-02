@@ -1,6 +1,6 @@
 import { useState } from "react";
 import streamvisionLogo from "@/assets/streamvision-logo.png";
-import visionaryLogo from "@/assets/visionary-logo.png";
+import visionaryLogo from "@/assets/visionary-logo-transparent.png";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
