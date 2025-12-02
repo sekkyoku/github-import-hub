@@ -417,7 +417,7 @@ const Index = () => {
                   <div className="flex items-center gap-3">
                     <img src={streamvisionLogo} alt="StreamVision Media" className="h-10 object-contain" />
                     <div className="h-8 w-px bg-border" />
-                    <div className="flex items-center gap-2 text-streamvision-coral">
+                    <div className="flex items-center gap-2 text-streamvision-navy">
                       <Sparkles className="h-5 w-5" />
                       <span className="font-semibold text-lg">Visionary</span>
                     </div>
