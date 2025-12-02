@@ -1,91 +1,73 @@
-# Visionary | StreamVision Media
+# Welcome to your Lovable project
 
-An AI-powered document query interface that connects to your n8n workflow for intelligent information retrieval from your Supabase file database.
+## Project info
 
-## 🚀 Features
+**URL**: https://lovable.dev/projects/2e714243-c15f-4d7a-97c7-871d6c643e41
 
-- **AI-Powered Queries**: Ask natural language questions about your documents
-- **Real-time Responses**: Get instant answers from your knowledge base
-- **Beautiful UI**: Modern, responsive interface with StreamVision Media branding
-- **Conversation History**: Keep track of your chat sessions
-- **N8N Integration**: Seamlessly connects to your existing n8n workflow
+## How can I edit this code?
 
-## 🛠️ Setup Instructions
+There are several ways of editing your application.
 
-### 1. Configure N8N Webhook
+**Use Lovable**
 
-1. Open your n8n workflow
-2. Copy your webhook URL
-3. Create a `.env` file in the project root:
+Simply visit the [Lovable Project](https://lovable.dev/projects/2e714243-c15f-4d7a-97c7-871d6c643e41) and start prompting.
 
-```bash
-VITE_N8N_WEBHOOK_URL=https://your-n8n-instance.com/webhook/your-webhook-id
-```
+Changes made via Lovable will be committed automatically to this repo.
 
-### 2. Install Dependencies
+**Use your preferred IDE**
 
-```bash
-npm install
-```
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-### 3. Run the Development Server
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-```bash
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-The app will be available at `http://localhost:8080`
+**Edit a file directly in GitHub**
 
-## 📡 N8N Workflow Requirements
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-Your n8n workflow should:
+**Use GitHub Codespaces**
 
-- Accept POST requests with the following structure:
-```json
-{
-  "query": "user's question",
-  "history": [
-    { "role": "user", "content": "previous message" },
-    { "role": "assistant", "content": "previous response" }
-  ]
-}
-```
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-- Return responses in one of these formats:
-```json
-{
-  "response": "AI response text"
-}
-// OR
-{
-  "message": "AI response text"
-}
-// OR
-{
-  "result": "AI response text"
-}
-```
+## What technologies are used for this project?
 
-## 🎨 Customization
+This project is built with:
 
-The app uses StreamVision Media's professional color palette with navy blue and coral tones. All colors are defined in `src/index.css` using CSS variables for easy customization.
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-## 📦 Deployment
+## How can I deploy this project?
 
-Deploy with one click using the Lovable platform:
+Simply open [Lovable](https://lovable.dev/projects/2e714243-c15f-4d7a-97c7-871d6c643e41) and click on Share -> Publish.
 
-1. Click **Publish** in the top right
-2. Your app will be deployed to production
-3. Optional: Connect your custom domain in Settings
+## Can I connect a custom domain to my Lovable project?
 
-## 🔧 Tech Stack
+Yes, you can!
 
-- **React** + **TypeScript**: Frontend framework
-- **Tailwind CSS**: Styling with custom design system
-- **shadcn/ui**: Beautiful, accessible UI components
-- **N8N**: Workflow automation and AI integration
-- **Vite**: Fast build tool and dev server
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-## 📄 License
-
-© 2025 StreamVision Media. All rights reserved.
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)

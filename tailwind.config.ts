@@ -13,9 +13,6 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -60,12 +57,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        streamvision: {
-          navy: "hsl(var(--streamvision-navy))",
-          coral: "hsl(var(--streamvision-coral))",
-          light: "hsl(var(--streamvision-light))",
-          text: "hsl(var(--streamvision-text))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -96,5 +87,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;
