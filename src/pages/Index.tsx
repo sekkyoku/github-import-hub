@@ -267,27 +267,16 @@ const Index = () => {
   const handleFileUpload = async (files: FileList, fileName: string) => {
     if (!files || files.length === 0) return;
 
-    const uploadUrl = import.meta.env.VITE_N8N_UPLOAD_URL;
-    
-    if (!uploadUrl) {
-      toast({
-        title: "Configuration Error",
-        description: "Upload URL is not configured",
-        variant: "destructive",
-      });
-      return;
-    }
+    // Use the same production URL for file uploads
+    const uploadUrl = "https://bacostam.app.n8n.cloud/webhook/canela-ai";
 
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
       const formData = new FormData();
       
-      // Add explicit upload flag for n8n condition node routing (TRUE branch)
-      formData.append("uploadOrQuery", "true");
-      formData.append("fileName", fileName);
-      
-      // Add the file with the key "file" to match n8n's Binary Parameter Name
+      // Form-data fields for upload branch (file + fileName)
       formData.append("file", file, file.name);
+      formData.append("fileName", fileName);
 
       try {
         const response = await fetch(uploadUrl, {

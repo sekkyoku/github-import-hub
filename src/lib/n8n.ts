@@ -1,6 +1,6 @@
 // N8N API integration
-// Replace with your actual n8n webhook URL
-const N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL || "";
+// Production webhook URL for Canela AI
+const N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL || "https://bacostam.app.n8n.cloud/webhook/canela-ai";
 
 export interface ChatMessage {
   role: "user" | "assistant";
@@ -10,24 +10,25 @@ export interface ChatMessage {
 
 export async function sendQueryToN8N(query: string, conversationHistory?: ChatMessage[], signal?: AbortSignal): Promise<string> {
   if (!N8N_WEBHOOK_URL) {
-    throw new Error("N8N_WEBHOOK_URL environment variable is not set");
+    throw new Error("N8N_WEBHOOK_URL is not configured");
   }
 
   try {
+    // Use FormData for form-data POST request (query branch - false)
+    const formData = new FormData();
+    formData.append("query", query);
+    
+    // Optionally include history as JSON string if needed
+    if (conversationHistory && conversationHistory.length > 0) {
+      formData.append("history", JSON.stringify(conversationHistory.map((msg) => ({
+        role: msg.role,
+        content: msg.content,
+      }))));
+    }
+
     const response = await fetch(N8N_WEBHOOK_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json, text/plain;q=0.9, */*;q=0.8",
-      },
-      body: JSON.stringify({
-        query,
-        uploadOrQuery: false,
-        history: conversationHistory?.map((msg) => ({
-          role: msg.role,
-          content: msg.content,
-        })),
-      }),
+      body: formData,
       signal,
     });
 
@@ -83,4 +84,22 @@ export async function sendQueryToN8N(query: string, conversationHistory?: ChatMe
     console.error("Error calling n8n workflow:", error);
     throw error;
   }
+}
+
+// File upload function using form-data (upload branch - true)
+export async function uploadFileToN8N(file: File, fileName: string): Promise<any> {
+  const formData = new FormData();
+  formData.append("file", file, file.name);
+  formData.append("fileName", fileName);
+
+  const response = await fetch(N8N_WEBHOOK_URL, {
+    method: "POST",
+    body: formData,
+  });
+
+  if (!response.ok) {
+    throw new Error(`Upload failed with status ${response.status}`);
+  }
+
+  return response.json().catch(() => ({ ok: true }));
 }
